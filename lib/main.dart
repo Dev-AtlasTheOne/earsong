@@ -1,8 +1,11 @@
-import 'package:earsong/login.dart';
+import 'package:earsong/paginas/home_page.dart';
 import 'package:flutter/material.dart';
 
 
 void main() {
-  runApp(MaterialApp(home: Login(),));
+  runApp(MaterialApp(
+    
+    home: HomePage(),)
+    );
 }
 
