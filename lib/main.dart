@@ -1,11 +1,6 @@
 import 'package:earsong/paginas/home_page.dart';
 import 'package:flutter/material.dart';
 
-
 void main() {
-  runApp(MaterialApp(
-    
-    home: HomePage(),)
-    );
+  runApp(MaterialApp(home: HomePage()));
 }
-

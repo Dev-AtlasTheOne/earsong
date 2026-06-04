@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  just_audio: ^0.10.5
+  just_waveform: ^0.0.7
 
 dev_dependencies:
   flutter_test:
