@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PlaylistPage extends StatefulWidget {
+  const PlaylistPage({super.key});
+
   @override
   State<StatefulWidget> createState() => _PlaylistPage();
 }
