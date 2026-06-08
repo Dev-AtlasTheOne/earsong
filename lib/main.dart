@@ -1,6 +1,36 @@
-import 'package:earsong/paginas/home_page.dart';
+import 'package:earsong/paginas/home_screen.dart';
+import 'package:earsong/theme/dark_theme.dart';
+import 'package:earsong/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MaterialApp(home: HomePage()));
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    child: const MyApp(),
+
+
+
+
+  ));
+}
+
+
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+
+      home: HomeScreen(),
+      theme: DarkTheme,
+
+
+    );
+  }
+
+
+
+
 }
