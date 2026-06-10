@@ -7,11 +7,14 @@ environment:
   sdk: ^3.11.0
 
 dependencies:
+  audio_video_progress_bar: ^2.0.3
+  file_picker: ^11.0.2
   flutter:
     sdk: flutter
   just_audio: ^0.10.5
+  just_audio_background: ^0.0.1-beta.17
   just_waveform: ^0.0.7
-  provider: ^6.1.5+1
+  rxdart: ^0.28.0
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +23,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/audio/
+    

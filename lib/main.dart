@@ -1,18 +1,10 @@
 import 'package:earsong/paginas/home_screen.dart';
-import 'package:earsong/theme/dark_theme.dart';
-import 'package:earsong/theme/theme_provider.dart';
+import 'package:earsong/theme/main_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => ThemeProvider(),
-    child: const MyApp(),
-
-
-
-
-  ));
+  runApp(const MyApp(),);
 }
 
 
@@ -24,8 +16,8 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
 
       home: HomeScreen(),
-      theme: DarkTheme,
-
+      theme: MainTheme.darkTheme,
+      
 
     );
   }

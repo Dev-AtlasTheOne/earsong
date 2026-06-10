@@ -2,6 +2,8 @@
 
 
 
+import 'package:earsong/models/playlists.dart';
+import 'package:earsong/paginas/playlists_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget{
@@ -42,7 +44,9 @@ class MainDrawer extends StatelessWidget{
             child: ListTile(
               title: Text("PLAYLISTS"),
               leading: Icon(Icons.list),
-              onTap: () => {},
+              onTap: () => {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PlaylistsScreen(playlists: Playlists(),),))
+              },
             ),
           ),
           Padding(

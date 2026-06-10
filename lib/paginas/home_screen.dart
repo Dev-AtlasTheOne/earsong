@@ -24,9 +24,10 @@ class _HomeScreenState extends State<HomeScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(title: Text("PLAYLIST"), centerTitle: true,),
+      backgroundColor: Colors.deepPurple,
+      appBar: AppBar(title: Text("H O M E"), centerTitle: true,),
       drawer: MainDrawer(),
+      body: Center(child: Text("Bem vindo a Earsong"))
 
 
 
