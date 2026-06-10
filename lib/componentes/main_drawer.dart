@@ -2,8 +2,9 @@
 
 
 
-import 'package:earsong/models/playlists.dart';
+import 'package:earsong/paginas/home_screen.dart';
 import 'package:earsong/paginas/playlists_screen.dart';
+import 'package:earsong/paginas/settings_page.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget{
@@ -28,15 +29,9 @@ class MainDrawer extends StatelessWidget{
             child: ListTile(
               title: Text("HOME"),
               leading: Icon(Icons.home),
-              onTap: () => {},
-            ),
-          ),
-          Padding(
-            padding: EdgeInsetsGeometry.all(25),
-            child: ListTile(
-              title: Text("SONGS"),
-              leading: Icon(Icons.music_note),
-              onTap: () => {},
+              onTap: () => {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()))
+              },
             ),
           ),
           Padding(
@@ -45,7 +40,7 @@ class MainDrawer extends StatelessWidget{
               title: Text("PLAYLISTS"),
               leading: Icon(Icons.list),
               onTap: () => {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PlaylistsScreen(playlists: Playlists(),),))
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PlaylistsScreen()))
               },
             ),
           ),
@@ -54,7 +49,9 @@ class MainDrawer extends StatelessWidget{
             child: ListTile(
               title: Text("SETTINGS"),
               leading: Icon(Icons.settings),
-              onTap: () => {},
+              onTap: () => {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SettingsPage()))
+              },
             ),
           ),
 

@@ -1,23 +1,36 @@
-import 'package:earsong/models/playlist.dart';
+import 'playlist.dart';
 
 class Playlists {
+  List<Playlist> allPlaylists;
 
-  List<Playlist> allPlaylists=[
-    Playlist(playlistName: "basePlaylist"),
+  Playlists({
+    List<Playlist>? allPlaylists,
+  }) : allPlaylists = allPlaylists ?? [];
 
-
-  ];
-
-
-  set addPlaylist(Playlist playlist){
-
+  void addPlaylist(Playlist playlist) {
     allPlaylists.add(playlist);
-
-
   }
 
+  void removePlaylist(int index) {
+    allPlaylists.removeAt(index);
+  }
 
+  void renamePlaylist(int index, String newName) {
+    allPlaylists[index].playlistName = newName;
+  }
 
+  Map<String, dynamic> toJson() {
+    return {
+      'allPlaylists':
+          allPlaylists.map((playlist) => playlist.toJson()).toList(),
+    };
+  }
 
-
+  factory Playlists.fromJson(Map<String, dynamic> json) {
+    return Playlists(
+      allPlaylists: (json['allPlaylists'] as List)
+          .map((playlist) => Playlist.fromJson(playlist as Map<String, dynamic>))
+          .toList(),
+    );
+  }
 }
