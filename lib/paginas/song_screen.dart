@@ -1,5 +1,5 @@
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
-import 'package:earsong/componentes/position_data.dart';
+import 'package:earsong/utilities/position_data.dart';
 import 'package:earsong/componentes/song_controls.dart';
 import 'package:earsong/models/playlist.dart';
 import 'package:flutter/material.dart';
@@ -38,14 +38,16 @@ class _SongScreenState extends State<SongScreen> {
   }
 
   Future<void> _loadPlaylist() async {
+    late String path;
   currentPlaylist = widget.playlist.playlistSongs.map((song) {
+    path = song.songPath;
     return AudioSource.file(song.songPath);
   }).toList();
 
-  await _player.setAudioSources(
-    currentPlaylist,
-    initialIndex: widget.initialIndex,
-    preload: true,
+  await _player.setFilePath(
+    path,
+    preload: true
+    
   );
 }
 
