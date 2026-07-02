@@ -23,5 +23,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+<<<<<<< HEAD
   assets:
     - assets/audio/
+=======
+  #assets:
+    
+    
+>>>>>>> e70ed2192c8c3a8eaa78dea35a1b40c8e2f7f2e9

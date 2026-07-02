@@ -1,5 +1,5 @@
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
-import 'package:earsong/componentes/position_data.dart';
+import 'package:earsong/utilities/position_data.dart';
 import 'package:earsong/componentes/song_controls.dart';
 import 'package:earsong/models/playlist.dart';
 import 'package:flutter/material.dart';

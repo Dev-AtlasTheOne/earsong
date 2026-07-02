@@ -1,4 +1,4 @@
-import 'package:earsong/componentes/load_data.dart';
+import 'package:earsong/utilities/load_data.dart';
 import 'package:earsong/global/Global.dart';
 import 'package:earsong/models/playlist.dart';
 import 'package:flutter/material.dart';
