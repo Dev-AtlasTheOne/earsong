@@ -2,27 +2,24 @@ import 'package:earsong/models/song.dart';
 
 class Playlist {
   String playlistName;
- 
-  List<Song> playlistSongs;
 
+  List<Song> playlistSongs;
 
   Playlist({required this.playlistName, required this.playlistSongs});
 
-
-
-  set addSong(Song song){
+  set addSong(Song song) {
     playlistSongs.add(song);
+  }
 
-
-
+  void removeSong(int index) {
+    playlistSongs.removeAt(index);
   }
 
   Map<String, dynamic> toJson() {
     return {
       'playlistName': playlistName,
-     
-      'playlistSongs':
-          playlistSongs.map((song) => song.toJson()).toList(),
+
+      'playlistSongs': playlistSongs.map((song) => song.toJson()).toList(),
     };
   }
 
@@ -34,10 +31,4 @@ class Playlist {
           .toList(),
     );
   }
-
-
-
-
-
-
 }

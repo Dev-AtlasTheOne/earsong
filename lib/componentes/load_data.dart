@@ -1,17 +1,13 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/playlists.dart';
 
 class LoadData {
-  
-
   static Future<void> save(Playlists playlists) async {
     final prefs = await SharedPreferences.getInstance();
 
-    await prefs.setString(
-      'playlists',
-      jsonEncode(playlists.toJson()),
-    );
+    await prefs.setString('playlists', jsonEncode(playlists.toJson()));
   }
 
   static Future<Playlists> load() async {
@@ -23,8 +19,16 @@ class LoadData {
       return Playlists();
     }
 
-    return Playlists.fromJson(
-      jsonDecode(jsonString),
-    );
+    final playlists = Playlists.fromJson(jsonDecode(jsonString));
+
+    for (final playlist in playlists.allPlaylists) {
+      playlist.playlistSongs.removeWhere(
+        (song) => !File(song.songPath).existsSync(),
+      );
+    }
+
+    await save(playlists);
+
+    return playlists;
   }
 }

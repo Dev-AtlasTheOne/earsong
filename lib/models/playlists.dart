@@ -3,9 +3,7 @@ import 'playlist.dart';
 class Playlists {
   List<Playlist> allPlaylists;
 
-  Playlists({
-    List<Playlist>? allPlaylists,
-  }) : allPlaylists = allPlaylists ?? [];
+  Playlists({List<Playlist>? allPlaylists}) : allPlaylists = allPlaylists ?? [];
 
   void addPlaylist(Playlist playlist) {
     allPlaylists.add(playlist);
@@ -21,15 +19,18 @@ class Playlists {
 
   Map<String, dynamic> toJson() {
     return {
-      'allPlaylists':
-          allPlaylists.map((playlist) => playlist.toJson()).toList(),
+      'allPlaylists': allPlaylists
+          .map((playlist) => playlist.toJson())
+          .toList(),
     };
   }
 
   factory Playlists.fromJson(Map<String, dynamic> json) {
     return Playlists(
       allPlaylists: (json['allPlaylists'] as List)
-          .map((playlist) => Playlist.fromJson(playlist as Map<String, dynamic>))
+          .map(
+            (playlist) => Playlist.fromJson(playlist as Map<String, dynamic>),
+          )
           .toList(),
     );
   }

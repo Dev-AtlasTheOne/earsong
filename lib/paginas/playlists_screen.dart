@@ -93,7 +93,7 @@ class _PlaylistsScreenState extends State<PlaylistsScreen> {
                 await LoadData.save(Global.playlists);
                 setState(() {});
               },
-              icon: Icon(Icons.remove),
+              icon: const Icon(Icons.delete, color: Colors.red),
             ),
             subtitle: Text("${playlist.playlistSongs.length} songs"),
             onTap: () {
