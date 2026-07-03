@@ -1,9 +1,15 @@
 import 'package:earsong/paginas/home_screen.dart';
-import 'package:earsong/theme/main_theme.dart';
+import 'package:earsong/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,6 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen(), theme: MainTheme.darkTheme);
+    return MaterialApp(
+      home: const HomeScreen(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
+    );
   }
 }

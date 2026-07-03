@@ -1,4 +1,4 @@
-import 'package:earsong/utilities/load_data.dart';
+import 'package:earsong/componentes/load_data.dart';
 import 'package:earsong/global/Global.dart';
 import 'package:earsong/models/playlist.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +77,6 @@ class _PlaylistsAddScreenState extends State<PlaylistsAddScreen> {
             "O nome que a playlist terá",
             Icons.text_fields,
           ),
-          
         ],
       ),
     );
@@ -102,17 +101,9 @@ class _PlaylistsAddScreenState extends State<PlaylistsAddScreen> {
           padding: EdgeInsetsGeometry.all(80),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              formBody(),
-              sendButton(context),
-
-
-            ],
+            children: [formBody(), sendButton(context)],
           ),
-
-
         ),
-
       ),
     );
   }
